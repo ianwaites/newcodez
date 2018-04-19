@@ -87,4 +87,9 @@ let newArray = [];
   return newArray
 }
 
+// CW Tests
+Test.assertSimilar(distinct([1]), [1]);
+Test.assertSimilar(distinct([1,2]), [1,2]);
+Test.assertSimilar(distinct([1,1,2]), [1,2]);
+
 * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - *
