@@ -23,7 +23,7 @@ Test.assertEquals(abbrevName("Evan Cole"), "E.C");
 Test.assertEquals(abbrevName("P Favuzzi"), "P.F");
 Test.assertEquals(abbrevName("David Mendieta"), "D.M");
  
- * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * 
+ * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * 
  
 // Create a function finalGrade, which calculates the final grade of a student depending on two parameters: a grade for the exam and a number of completed projects.
 // This function should take two arguments: exam - grade for exam (from 0 to 100); projects - number of completed projects (from 0 and above);
@@ -50,3 +50,41 @@ describe("Sample tests", function(){
   Test.assertEquals(finalGrade(100, 12), 100);
   Test.assertEquals(finalGrade(85, 5), 90);
 });
+
+* - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - *
+
+// Write a function to split a string and convert it into an array of words.
+
+// Solution
+const stringToArray = string => string.split(' ');
+
+// CW Tests
+Test.expect(stringToArray("Robin Singh"), ["Robin", "Singh"]);
+Test.expect(stringToArray("I love arrays they are my favorite"), ["I", "love", "arrays", "they", "are", "my", "favorite"]);
+
+* - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - *
+
+// Complete the functionthat removes duplicates from a list of numbers.
+// The order of the sequence needs to stay the same.
+
+// Solution 1
+function distinct(a) {
+ let foo = new Set(a);
+ let bar = foo.values();
+ return Array.from(bar);
+}
+
+// Solution 2
+function distinct(a){
+let newArray = [];
+
+  for(let i=0; i < a.length; i++){
+    if(newArray.indexOf(a[i]) === -1){
+      newArray.push(a[i]);
+    }
+  }
+
+  return newArray
+}
+
+* - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - *
