@@ -178,3 +178,20 @@ Test.assertSimilar(basicOp('*', 5, 5), 25);
 Test.assertSimilar(basicOp('/', 49, 7), 7);
 
 * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - *
+
+// Very simple, given a number, find its opposite.
+// Examples:
+// 1: -1
+// 14: -14
+// -34: 34
+// But can you do it in 1 line of code and without any conditionals?
+
+// Solution 1 (Voted best pracice in CW btw :D )
+function opposite(number) {
+  return (-number); 
+}
+
+// Sample CW Tests
+Test.assertEquals(opposite(1), -1,)
+
+* - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - *
