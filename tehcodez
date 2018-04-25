@@ -2,17 +2,45 @@
 * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - LEVEL <8 KYU> KATAS 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * 
 * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * 
 
+// Character recognition software is widely used to digitise printed texts. Thus the texts can be edited, searched and stored
+// on a computer.
+
+// When documents (especially pretty old ones written with a typewriter), are digitised character recognition softwares often
+// make mistakes.
+
+// Your task is correct the errors in the digitised text. You only have to handle the following mistakes:
+
+// S is misinterpreted as 5
+// O is misinterpreted as 0
+// I is misinterpreted as 1
+// The test cases contain numbers only by mistake.
+
+// <<<< Solution >>>>
+function correct(string)
+{
+  return string.replace(/5/g,"S").replace(/0/g,"O").replace(/1/g,"I");
+}
+
+// CW Sample Tests
+Test.assertEquals(correct("L0ND0N"),"LONDON");
+Test.assertEquals(correct("DUBL1N"),"DUBLIN");
+Test.assertEquals(correct("51NGAP0RE"),"SINGAPORE");
+Test.assertEquals(correct("BUDAPE5T"),"BUDAPEST");
+Test.assertEquals(correct("PAR15"),"PARIS");
+
+* - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * - 8 - * 
+
 // I'm new to coding and now I want to get the sum of two arrays...actually the sum of all their elements. I'll appreciate for
 // your help.
 // P.S. Each array includes only integer numbers. Output is a number too.
 
 
-// Solution 1
+// <<<< Solution 1 >>>>
 function arrayPlusArray(arr1, arr2) {
   return arr1.reduce((a, b) => a + b, 0) + arr2.reduce((a, b) => a + b, 0);
 }
 
-// Solution 2 - Refactored - realized that I could combine the two arrays, then .reduce one time instead of
+// <<<< Solution 2 >>>> - Refactored - realized that I could combine the two arrays, then .reduce one time instead of
 // reducing each array prior to getting the sum
 function arrayPlusArray(arr1, arr2) {
   return arr1.concat(arr2).reduce((a, b) => a + b);
@@ -46,7 +74,7 @@ Test.describe("Basic tests",function(){
 // The second value in the first integer array is 0, since the bus is empty in the first bus stop.
 
 
-// Solution 1
+// <<<< Solution 1 >>>>
 var number = function(busStops){
   let final = 0;
   for (let i = 0; i < busStops.length; i++) {
@@ -57,11 +85,11 @@ var number = function(busStops){
   return final;
 }
 
-// Solution 2 - Using .reduce
+// <<<< Solution 2 >>>> (Using .reduce)
 const number = busStops => busStops.reduce((n, [on, off]) => n + on - off, 0);
 
 
-// Solution 3 - Using .map
+// <<<< Solution 3 >>>> (Using .map)
 var number = (busStops) => {
   let final = 0;
   busStops.map( people => people[0] - people[1] ).map( people => final += people );
@@ -77,7 +105,7 @@ Test.assertEquals(number([[3,0],[9,1],[4,8],[12,2],[6,1],[7,8]]),21);
 
 // Complete the solution so that it reverses the string value passed into it.
 
-// Solution
+// <<<< Solution >>>>
 function solution(str){
   return str.split('').reverse().join('');
 }
@@ -98,12 +126,12 @@ Test.expect(solution('world') == 'dlrow')
 // hyphens and spaces, but these will not appear at the beginning or end of the string. They will not contain numerals.
 
 
-// Solution 1
+// <<<< Solution 1 >>>>
 function feast(beast, dish) {
   return beast[0] === dish[0] && beast[beast.length - 1] === dish[dish.length - 1]
 }
 
-// Solution 2
+// <<<< Solution 2 >>>>
 function feast(beast, dish) {
  return beast.substr(0, 1) === dish.substr(0, 1) && beast.substr(-1, 1) === dish.substr(-1, 1) 
 }
@@ -117,12 +145,12 @@ Test.assertEquals(feast("brown bear", "bear claw"), false)
 
 // Simple, remove the spaces from the string, then return the resultant string.
 
-// Solution 1
+// <<<< Solution 1 >>>>
 function noSpace(x){
   return x.split(' ').join('');
 }
 
-// Solution 2
+// <<<< Solution 2 >>>>
 function noSpace(x){
   return x.replace(/\s/g, '');
 }
@@ -141,12 +169,12 @@ Test.assertEquals(noSpace('8aaaaa dddd r     '), '8aaaaaddddr');
 // After your function finds the needle it should return a message (as a string) that says:
 // "found the needle at position " plus the index it found the needle.
 
-// Solution
+// <<<< Solution >>>>
 function findNeedle(haystack) {
   return "found the needle at position " + haystack.indexOf('needle') + ''
 }
 
-// Solution 2
+// <<<< Solution 2 >>>>
 const findNeedle = haystack => `found the needle at position ${haystack.indexOf('needle')}`;
 
 // CW Sample Tests
@@ -167,13 +195,13 @@ Test.assertEquals(findNeedle(haystack_3), 'found the needle at position 30')
 // Sam Harris => S.H
 // Patrick Feeney => P.F
 
-// Solution 1
+// <<<< Solution 1 >>>>
 function abbrevName(name) {
   abbr = name.split(' ');
   return abbr[0][0].toUpperCase() + '.' + abbr[1][0].toUpperCase();
 }
 
-// Solution 2
+// <<<< Solution 2 >>>>
 function abbrevName(name){
   return name.split(' ').map(x => x[0].toUpperCase()).join('.');
 }
@@ -198,7 +226,7 @@ Test.assertEquals(abbrevName("David Mendieta"), "D.M");
 // 75, if a grade for the exam is more than 50 and if a number of completed projects is minimum 2.
 // 0, in other cases
 
-// Solution 1
+// <<<< Solution 1 >>>>
 function finalGrade (exam, projects) {
   if(exam > 90 || projects > 10) return 100;
   if(exam > 75 & projects >= 5) return 90;
@@ -206,7 +234,7 @@ function finalGrade (exam, projects) {
   return 0;
 }
 
-// Solution 2 
+// <<<< Solution 2 >>>>
 const finalGrade = (exam, projects) => exam > 90 || projects > 10 ? 100 : exam > 75 && projects >= 5 ? 90 : exam > 50 && projects >= 2 ? 75 : 0;
 
 // CW Tests
@@ -219,7 +247,7 @@ describe("Sample tests", function(){
 
 // Write a function to split a string and convert it into an array of words.
 
-// Solution
+// <<<< Solution >>>>
 const stringToArray = string => string.split(' ');
 
 // CW Tests
@@ -231,14 +259,14 @@ Test.expect(stringToArray("I love arrays they are my favorite"), ["I", "love", "
 // Complete the functionthat removes duplicates from a list of numbers.
 // The order of the sequence needs to stay the same.
 
-// Solution 1
+// <<<< Solution 1 >>>>
 function distinct(a) {
  let foo = new Set(a);
  let bar = foo.values();
  return Array.from(bar);
 }
 
-// Solution 2
+// <<<< Solution 2 >>>>
 function distinct(a){
 let newArray = [];
 
@@ -273,7 +301,7 @@ Test.assertSimilar(distinct([1,1,2]), [1,2]);
 // If you make it, return "Alive!", if not, return "Shark Bait!".
 
 
-// Solution 1
+// <<<< Solution 1 >>>>
 function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin){
   if (dolphin) {
      sharkSpeed /= 2
@@ -294,7 +322,7 @@ Test.assertEquals(shark(24, 0, 4, 8, true), "Shark Bait!");
 // Get the number n (n>0) to return the reversed sequence from n to 1.
 // Example : n=5 >> [5,4,3,2,1]
 
-// Solution 1
+// <<<< Solution 1 >>>>
 const reverseSeq = n => {
   let nums = [];
   for (let i = n; i > 0; i--) {
@@ -319,7 +347,7 @@ describe("reverseSeq", function() {
 // The function should take three arguments - operation(string/char), value1(number), value2(number).
 // The function should return result of numbers after applying the chosen operation.
 
-// Solution 1 (Voted Best Practice on CW *yay!*)
+// <<<< Solution 1 >>>> (Voted Best Practice on CW *yay!*)
 function basicOp(operation, value1, value2) {
     switch (operation) {
         case '+':
@@ -351,7 +379,7 @@ Test.assertSimilar(basicOp('/', 49, 7), 7);
 // -34: 34
 // But can you do it in 1 line of code and without any conditionals?
 
-// Solution 1 (Voted best pracice in CW btw :D )
+// <<<< Solution 1 >>>> (Voted best pracice in CW btw :D )
 function opposite(number) {
   return (-number); 
 }
