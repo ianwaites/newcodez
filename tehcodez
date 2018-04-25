@@ -8,7 +8,7 @@
 
 // Solution
 function arrayPlusArray(arr1, arr2) {
-  return arr1.reduce((arr, curr) => arr + curr, 0) + arr2.reduce((ar, cur) => ar + cur, 0);
+  return arr1.reduce((a, b) => a + b, 0) + arr2.reduce((a, b) => a + b, 0);
 }
 
 // CW Sample Tests
